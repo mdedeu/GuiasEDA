@@ -1,1 +1,0 @@
-prefixDir=C:/Users/marcos/Documents/EDA/lucene
