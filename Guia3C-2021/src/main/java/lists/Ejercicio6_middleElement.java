@@ -4,33 +4,13 @@ public class Ejercicio6_middleElement {
 
   private static int size;
   static int middleElement(SinglyLinkedListNoHeader<Integer> list) {
-    size = 0;
-    return rec(list).value;
-  }
+    SinglyLinkedListNoHeader<Integer> pointer1 = list;
+    SinglyLinkedListNoHeader<Integer> pointer2 = list;
+    while (pointer1.next != null && pointer1.next.next != null){
+      pointer1 = pointer1.next.next;
 
-  private static Pair rec(SinglyLinkedListNoHeader<Integer> list){
-    if(list == null)
-      return new Pair(0, null);
-    size++;
-    Pair ret = rec(list.next);
-    if(ret.value != null)
-      return ret;
-    if(ret.idx == size/2)
-      return new Pair(ret.idx, list.value);
-    return ret.incIdx();
-  }
-  private static class Pair{
-    int idx;
-    Integer value;
-
-    public Pair(int idx, Integer value) {
-      this.idx = idx;
-      this.value = value;
+      pointer2 = pointer2.next;
     }
-
-    public Pair incIdx(){
-      idx++;
-      return this;
-    }
+    return pointer2.value;
   }
 }
