@@ -1,2 +1,3 @@
 # GuiasEDA
-Compilado de Ejercicios resueltos de las guias1-3C de EDA
+Compilado de Guias y resoluciones de la materia Estructura de Datos y Algoritmos
+
