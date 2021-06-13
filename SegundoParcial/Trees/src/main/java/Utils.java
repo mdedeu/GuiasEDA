@@ -1,4 +1,10 @@
 public class Utils {
+		static HashMap<String, BinaryOperator<Double>> operators = new HashMap<String, BinaryOperator<Double>>(){{
+        		put("+", (x,y)->x+y);
+        		put("*", (x,y)->x*y);
+        		put("/", (x,y)->x/y);
+        		put("-", (x,y)->x-y);
+    		}};
 
 	static public boolean isConstant(String data) {
 		try {

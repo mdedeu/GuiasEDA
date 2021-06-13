@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class ExpTree {
 	
 	private Node root;
+
 	public ExpTree() {
 	    System.out.print("Introduzca la expresion en notacion infija con todos los parentesis y blancos: ");
 
@@ -25,6 +26,7 @@ public class ExpTree {
     
 	
 	
+
 	static final class Node {
 		private String data;
 		private Node left, right;
@@ -45,7 +47,12 @@ public class ExpTree {
 		
 		private Node() 	{
 		}
-		
+		public Double eval() {
+            		if ( Utils.isConstant(data) )
+                		return Utils.getDoubleConstant(data);
+            			// No hace falta atrapar la excepcion, ya esta validado
+            			return Utils.applyOperation(data, left.eval(), right.eval());
+        	}
 		
 		
 	
